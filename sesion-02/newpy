@@ -1,0 +1,4 @@
+#!/bin/sh
+echo "#!/usr/bin/env python" > $1
+echo "# -*- encoding: utf8 -*-" >> $1
+echo >> $1

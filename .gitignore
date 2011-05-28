@@ -1,0 +1,10 @@
+syntax: glob
+.DS_Store
+*.orig
+*.pyc
+*.*~
+*_build*
+*.db
+*.DS_Store
+*.sw*
+pip-log.txt

@@ -27,7 +27,7 @@ En Windows: Descargar e instalar desde http://code.google.com/p/msysgit/
 
 02.- Clone la carpeta del repositorio
 
-git clone https://gnrfan@github.com/perulinux/web20-python-django-mayo-2011.git
+git clone https://github.com/perulinux/web20-python-django-mayo-2011.git
 
 03.- Mantener actualizado el repositorio (repetir periódicamente)
 

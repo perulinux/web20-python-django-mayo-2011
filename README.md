@@ -29,7 +29,13 @@ En Windows: Descargar e instalar desde http://code.google.com/p/msysgit/
 
 git clone https://github.com/perulinux/web20-python-django-mayo-2011.git
 
-03.- Mantener actualizado el repositorio (repetir periódicamente)
+03. Fijarse si hay cambios por recuperar del servidor 
+
+git remote show origin
+
+Si dice que el repositorio local está "out of date" necesitan jalar cambios desde el servidor y deben hacer el paso 04.
+
+04.- Mantener actualizado el repositorio (repetir periódicamente)
 
 git pull origin master:master
 

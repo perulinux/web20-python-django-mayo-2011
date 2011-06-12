@@ -46,13 +46,17 @@ class Factura(object):
         subtotales = [detalle.subtotal() for detalle in self.detalles]
         return functools.reduce(operator.add, subtotales)
 
+    @staticmethod
+    def calcular_igv_de_monto(monto):
+        return monto * Factura.IGV
+
     def calcular_igv(self):
-        return self.total_bruto() * Factura.IGV
+        return Factura.calcular_igv_de_monto(self.total_bruto())
 
     def total_neto(self):
         return self.total_bruto() + self.calcular_igv()
 
-    def imprimir_factura(self):
+    def imprimir(self):
         print "Factura Nro. %06d" % self.numero
         print "%s - RUC %s" % (
             self.proveedor.razon_social,
@@ -79,3 +83,47 @@ class Factura(object):
         print "IGV: S/. %.2f" % self.calcular_igv()
         print "Monto neto: S/. %.2f" % self.total_neto() 
 
+# Empresas
+
+proveedor = Empresa(
+    razon_social='Python S.A.C.',
+    ruc='56103420345',
+    propietario='Ernesto Quispe'
+)
+
+cliente = Empresa(
+    'Clevertronix S.A.C.',
+    '94324209101',
+    propietario='Clever Flores'
+)
+
+# Productos
+
+producto1 = Producto(
+    descripcion='Laptop MacBook Pro 15"',
+    precio_unitario=5000
+)
+
+producto2 = Producto(
+    descripcion='USB 32 GB HPv3251',
+    precio_unitario=150
+)
+
+producto3 = Producto(
+    'Monitor LCD LG 17"',
+    600
+)
+
+# Factura
+
+factura = Factura(
+    numero=1,
+    proveedor=proveedor,
+    cliente=cliente
+)
+
+factura.agregar_detalle(producto1, 1)
+factura.agregar_detalle(producto3, 3)
+factura.agregar_detalle(producto2, 2)
+
+factura.imprimir()

@@ -1,0 +1,17 @@
+Instalacion de Django en Ubuntu
+
+Instalando desde paquetes:
+
+sudo apt-get install python-django
+
+Instando con setup tools
+
+sudo apt-get install python-setuptools
+sudo easy_install django
+
+Desde codigo fuente:
+
+wget http://www.djangoproject.com/download/1.3/tarball/
+tar xzvf Django-1.3.tar.gz
+cd Django-1.3
+sudo python setup.py instal

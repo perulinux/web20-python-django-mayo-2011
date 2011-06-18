@@ -1,0 +1,4 @@
+Instalando desde MacPorts
+
+sudo port install py27-setuptools
+sudo easy_install-2.7 django

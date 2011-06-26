@@ -1,0 +1,12 @@
+{% extends "layouts/base.html" %}
+{% block title %}Nuevo pedido{% endblock %}
+
+{% block content %}
+<h1>Nuevo pedido</h1>
+<form action="{% url create_order %}" method="POST" />{% csrf_token %}
+<table>
+{{ form.as_table }}
+</table>
+<p><input type="submit" value="Enviar pedido" /></p>
+</form>
+{% endblock %}

@@ -7,4 +7,3 @@ import views
 urlpatterns = patterns('',
     (r'^latest/$', views.latest_books),
 )
-

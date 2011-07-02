@@ -3,7 +3,7 @@
 
 {% block content %}
 <h1>Nuevo pedido</h1>
-<form action="{% url create_order %}" method="POST" />{% csrf_token %}
+<form action="{% url create_order %}" method="POST" />{% comment %}{% csrf_token %}{% endcomment %}
 <table>
 {{ form.as_table }}
 </table>

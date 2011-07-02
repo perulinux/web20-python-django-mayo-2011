@@ -52,7 +52,11 @@ class Book(models.Model):
     )
 
     def __unicode__(self):
-        return u'%s' % self.title
+        return u'%s por %s (%s)' % (
+            self.title, 
+            self.author,
+            self.pub_date.year
+        )
 
     class Meta:
         verbose_name = _(u'Libro')

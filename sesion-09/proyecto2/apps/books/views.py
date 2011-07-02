@@ -12,13 +12,18 @@ def latest_books(request):
     return render_to_response('books/latest_books.html', {'book_list': book_list})
 
 def create_order(request):
+    """
+    Processes an book order from customers
+    """
+    form = OrderForm()
     if request.method == 'POST':
         form = OrderForm(request.POST)
         if form.is_valid():
+            # This decrements the number of books in stock
+            # for the requested book
+            order = form.save()
             return HttpResponseRedirect(reverse('latest_books'))
-    else:
-        form = OrderForm()
-        return render_to_response(
-            'books/create_order.html', 
-            {'form': form}
-        )
+    return render_to_response(
+        'books/create_order.html', 
+        {'form': form}
+    )

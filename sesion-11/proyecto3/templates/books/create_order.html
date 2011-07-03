@@ -1,7 +1,9 @@
 {% extends "layouts/base.html" %}
+{% load email_obfuscation %}
 {% block title %}Nuevo pedido{% endblock %}
-
 {% block content %}
+<p>Escribenos a {{ "juan@examples.com"|email_obfuscation|safe }}</p>
+<p>Entero aleatorio: {% random_integer 100 200 %}</p>
 {% if user.is_authenticated %}
 <p>El usuario ha iniciado sesión</p>
 {% else %}

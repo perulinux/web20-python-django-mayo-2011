@@ -1,0 +1,50 @@
+[
+    {
+        "pk": 2, 
+        "model": "books.author", 
+        "fields": {
+            "website": "http://www.paulocoelho.com/", 
+            "lastname": "Coelho", 
+            "firstname": "Paulo"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "books.author", 
+        "fields": {
+            "website": "http://www.mvargasllosa.com/", 
+            "lastname": "Vargas Llosa", 
+            "firstname": "Mario"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "books.book", 
+        "fields": {
+            "stock": 2, 
+            "author": 2,
+            "pub_date": "1994-10-07", 
+            "title": "El Alquimista"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "books.book", 
+        "fields": {
+            "stock": 10, 
+            "author": 1,
+            "pub_date": "2000-02-11", 
+            "title": "La Fiesta del Chivo"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "books.book", 
+        "fields": {
+            "stock": 20, 
+            "author": 1,
+            "pub_date": "2008-04-01", 
+            "title": "Pantale\u00f3n y las Visitadoras"
+        }
+    }
+]

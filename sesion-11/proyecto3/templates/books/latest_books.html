@@ -1,0 +1,11 @@
+{% extends "layouts/base.html" %}
+{% block title %}Últimos libros{% endblock %}
+
+{% block content %}
+<h1>Books</h1>
+<ul>
+{% for book in book_list %}
+<li>{{ book.title }} por {{ book.author }}</li>
+{% endfor %}
+</ul>
+{% endblock %}

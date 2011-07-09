@@ -1,0 +1,9 @@
+PIL
+feedparser
+python-dateutil
+django
+django_extensions
+django-admin-tools
+south
+MySQL-Python
+git+http://github.com/jtauber/django-mailer.git

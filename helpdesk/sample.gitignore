@@ -1,11 +1,16 @@
 syntax: glob
 .DS_Store
+log/
+access.log
+error.log
 *.orig
 *.pyc
 *.*~
 *_build*
 *.db
+media/uploads
+application/static/uploads/
 *.DS_Store
 *.sw*
+env/
 pip-log.txt
-helpdesk/env

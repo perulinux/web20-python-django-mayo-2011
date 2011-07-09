@@ -1,0 +1,24 @@
+[
+    {
+        "pk": 2, 
+        "model": "empresa.proveedor", 
+        "fields": {
+            "website": "http://www.ibm.com/pe/es/", 
+            "nombre": "IBM", 
+            "creado_en": "2011-07-09 13:52:11", 
+            "telefonos": "", 
+            "direccion": ""
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "empresa.proveedor", 
+        "fields": {
+            "website": "http://www.microsoft.com/", 
+            "nombre": "Microsoft", 
+            "creado_en": "2011-07-09 13:49:34", 
+            "telefonos": "", 
+            "direccion": ""
+        }
+    }
+]

@@ -36,7 +36,9 @@ class Area(models.Model):
 
     responsable = models.ForeignKey('Empleado',
         verbose_name = _(u'Responsable'),
-        related_name = 'responsables'
+        related_name = 'responsables',
+        null=True,
+        blank=True
     )
 
     def __unicode__(self):
@@ -112,7 +114,9 @@ class Empleado(models.Model):
     )
 
     superior = models.ForeignKey('Empleado',
-        verbose_name=_(u'Superior inmediato')
+        verbose_name=_(u'Superior inmediato'),
+        blank=True,
+        null=True
     )
 
     soporte = models.BooleanField(

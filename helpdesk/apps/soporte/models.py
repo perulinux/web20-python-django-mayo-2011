@@ -6,6 +6,8 @@ from django.utils.translation import ugettext as _
 from django_extensions.db.fields import CreationDateTimeField
 from empresa.models import Proveedor
 from empresa.models import Empleado
+from hardware.models import Equipo
+from software.models import Software
 
 class Incidencia(models.Model):
 
@@ -92,6 +94,18 @@ class Incidencia(models.Model):
         verbose_name=_(u'Porcentaje de avance'),
         choices=AVANCE_CHOICES,
         default=0.00
+    )
+
+    equipo = models.ForeignKey(Equipo,
+        verbose_name=_(u'Equipo'),
+        null=True,
+        blank=True
+    )
+
+    software = models.ManyToManyField(Software,
+        verbose_name=_(u'Software'),
+        null=True,
+        blank=True
     )
 
     creado_en = CreationDateTimeField(

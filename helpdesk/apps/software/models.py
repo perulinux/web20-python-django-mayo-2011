@@ -26,6 +26,11 @@ class FamiliaSoftware(models.Model):
         verbose_name_plural = _(u'Familias de software')
         ordering = ('nombre', )
 
+class SoftwareManager(models.Manager):
+
+    def sistemas_operativos(self):
+        return self.filter(sistema_operativo=True)
+
 class Software(models.Model):
     
     nombre = models.CharField(
@@ -56,6 +61,8 @@ class Software(models.Model):
     creado_en = CreationDateTimeField(
         verbose_name=_(u'Creado en')
     )
+
+    objects = SoftwareManager()
        
     def __unicode__(self):
         return (self.nombre)

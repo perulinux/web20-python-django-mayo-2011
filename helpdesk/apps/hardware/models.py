@@ -26,11 +26,19 @@ class TipoEquipo(models.Model):
         verbose_name_plural = _(u'Tipos de equipo')
         ordering = ('nombre', )
 
+class EquipoManager(models.Manager):
+
+    def activos(self):
+        self.filter(estado=Equipo.ESTADO_ACTIVO)
+
 class Equipo(models.Model):
     
+    ESTADO_ACTIVO = 1
+    ESTADO_INACTIVO = 2
+
     ESTADO_CHOICES = (
-        (1, u'Activo'),
-        (0, u'Inactivo'),
+        (ESTADO_ACTIVO, u'Activo'),
+        (ESTADO_INACTIVO, u'Inactivo'),
     )
 
     nombre = models.CharField(
@@ -67,7 +75,11 @@ class Equipo(models.Model):
         verbose_name=_(u'Estado'),
         choices=ESTADO_CHOICES
     )
-    
+
+    creado_en = CreationDateTimeField(
+        verbose_name=_(u'Creado en')
+    )
+
     def __unicode__(self):
         return (self.descripcion)
     

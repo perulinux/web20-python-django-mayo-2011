@@ -126,5 +126,8 @@ INSTALLED_APPS = (
 
     # apps
     'empresa',
+    'hardware',
+    'software',
+    'soporte'
 
 )

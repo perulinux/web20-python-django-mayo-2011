@@ -84,3 +84,41 @@ No olvidar:
 Para ver el proyecto en web:
 
 ../env/bin/python manage.py runserver 0.0.0.0:<puerto>
+
+Para el 16 de Julio:
+
+Listado de incidencias (vista para usuarios finales)
+
+Responsables:
+
+Christian
+Jose Antonio
+
+- vista en la aplicación "soporte" que muestre un listado de las incidencias reportadas por el usuario que ha iniciado sesión
+- vista de detalle de la incidencia (para usuario final) incluyendo que personal lo tiene asignado, porcentaje de avance, documentos adjuntos, y el listado de eventos ordenado descendentemente.
+- Formulario para reportar un nuevo incidente (ModelForm) en una vista que recibe el form y crea la incidencia
+
+Listado de incidencias (vista para personal de soporte)
+
+Responsables:
+
+Phyllips
+Samuel
+
+- Listado de incidencias reportadas indicando si esta asignada o no y a aquien ha sido asignada
+- Se marca con un color especial las incidencias asignas al usuario de soporte que esta logueado
+- Hacer un formulario para actualizar el estado de la incidencia en donde el combo para escoger al usuario asignado solo muestra usuarios que son de soporte (ModelChoiceField)
+- Usar un manager para filtrar solo al personal de soporte
+- Hay que hacer la vista para el listado y la vista para actualizar la 
+incidencia:
+
+Antonio:
+
+- Mejorar el admin de incidencias incluyendo "inlines" 
+- Escribir el código que detecta los cambios de estado, escribe el mensaje relacionado y la metada y lo guarda en la base de datos.
+- Avanzado la integración con pantallas de login, logout, recuperar password.
+
+Para el domingo (última clase)
+
+- Reportes (intentaremos exportar como CSV)
+- Gráficos (usando Google Chart API)

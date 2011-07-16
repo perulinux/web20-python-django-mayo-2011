@@ -3,6 +3,7 @@
 from django.db import models
 from django.utils.translation import ugettext as _
 from django_extensions.db.fields import CreationDateTimeField
+from django.contrib.auth.models import User
 
 class Proveedor(models.Model):
     nombre = models.CharField(max_length=64)
@@ -122,6 +123,12 @@ class Empleado(models.Model):
     soporte = models.BooleanField(
         verbose_name=_(u'¿Personal de soporte?'),
         default=False,
+    )
+
+    usuario = models.OneToOneField(User,
+        verbose_name=_(u'Usuario'),
+        null=True,
+        blank=True
     )
 
     def __unicode__(self):

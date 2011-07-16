@@ -1,0 +1,7 @@
+{% extends "layout/base.html" %}
+{% load url from future %}
+
+{% block content %}
+<h1>Dashboard</h1>
+<p>Bienvenido {{ user.empleado.nombre_completo }} | <a href="{% url 'django.contrib.auth.views.logout' %}">Cerrar sesión</a></p>
+{% endblock %}

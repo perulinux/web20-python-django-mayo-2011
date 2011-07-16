@@ -1,0 +1,14 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<head>
+    <link rel="stylesheet" href="default.css" type="text/css">
+    <title>{% block title %}{% endblock %}</title>
+    {% block extrahead %}{% endblock %}
+</head>
+<body>
+    <h1 id="top">{% block name %}{% endblock %}</h1>
+    {% block content %}{% endblock %}
+    <div id="footer">
+    <p>(C) 2011 - Perulinux.pe</p>
+    </div>
+</body>
+</html>

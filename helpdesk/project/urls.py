@@ -20,6 +20,13 @@ urlpatterns = patterns('',
     # Admin tools
     url(r'^admin_tools/', include('admin_tools.urls')),
 
+    # Auth
+    (r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'auth/login.html'}, 'login'),
+    (r'^logout/$', 'django.contrib.auth.views.logout', {'template_name': 'auth/logout.html'}, 'logout'),
+
+    # Soporte
+    (r'', include('soporte.urls')),
+
 )
 
 if settings.DEBUG:

@@ -24,6 +24,8 @@ urlpatterns = patterns('',
     (r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'auth/login.html'}, 'login'),
     (r'^logout/$', 'django.contrib.auth.views.logout', {'template_name': 'auth/logout.html'}, 'logout'),
 
+    (r'^$', 'django.views.generic.simple.redirect_to', {'url':'/dashboard/'}, 'homepage'),
+
     # Soporte
     (r'', include('soporte.urls')),
 

@@ -1,0 +1,2 @@
+{% load url from future %}
+<p>Bienvenido {{ user.empleado.nombres }} | <a href="{% url 'dashboard' %}">Dashboard</a> | <a href="{% url 'django.contrib.auth.views.logout' %}">Cerrar sesión</a></p>

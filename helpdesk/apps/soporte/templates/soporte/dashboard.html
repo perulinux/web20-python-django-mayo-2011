@@ -3,5 +3,11 @@
 
 {% block content %}
 <h1>Dashboard</h1>
-<p>Bienvenido {{ user.empleado.nombre_completo }} | <a href="{% url 'django.contrib.auth.views.logout' %}">Cerrar sesión</a></p>
+{% include "layout/header.html" %}
+<ul>
+<li><a href="{% url 'mis_incidencias' %}">Reportar incidencias</a></li>
+{% if user.empleado.soporte %}
+<li><a href="{% url 'incidencias' %}">Gestionar incidencias</a></li>
+{% endif %}
+</ul>
 {% endblock %}

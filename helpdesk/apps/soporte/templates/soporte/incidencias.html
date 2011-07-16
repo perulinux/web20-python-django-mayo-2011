@@ -1,0 +1,35 @@
+{% extends "layout/base.html" %}
+{% load url from future %}
+
+{% block content %}
+<h1>Mis incidencias</h1>
+{% include "layout/header.html" %}
+{% if incidencias %}
+<table border="1">
+<tr>
+<td>Titulo</td>
+<td>Reportada por</td>
+<td>Asignada a</td>
+<td>Estado</td>
+<td>Gravedad</td>
+<td>Avance</td>
+<td>Creada en</td>
+<td>Acciones</td>
+</tr>
+{% for incidencia in incidencias %}
+<tr>
+<td>{{ incidencia.titulo }}</td>
+<td>{{ incidencia.reportada_por.usuario.username }}</td>
+<td>{% if incidencia.asignada_a %}{{ incidencia.asignada_a.usuario.username }}{% else %}<i>Pendiente</i>{% endif %}</td>
+<td>{{ incidencia.get_estado_display }}</td>
+<td>{{ incidencia.get_gravedad_display }}</td>
+<td>{{ incidencia.get_avance_display }}</td>
+<td>{{ incidencia.creado_en }}</td>
+<td><a href="">Gestionar</a></td>
+</tr>
+{% endfor %}
+</table>
+{% else %}
+<p>No existen incidencias reportadas.</p>
+{% endif %}
+{% endblock %}

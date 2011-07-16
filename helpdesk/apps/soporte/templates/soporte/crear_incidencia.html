@@ -1,0 +1,11 @@
+{% extends "layout/base.html" %}
+{% block title %}Nueva incidencia{% endblock %}
+{% block content %}
+<h1>Nueva incidencia</h1>
+<form action="{% url 'nueva_incidencia' %}" method="POST" />{% comment %}{% csrf_token %}{% endcomment %}
+<table>
+{{ form.as_table }}
+</table>
+<p><input type="submit" value="Crear" /></p>
+</form>
+{% endblock %}

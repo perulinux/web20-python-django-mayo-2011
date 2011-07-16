@@ -1,8 +1,10 @@
-# Create your views here.
+# -*- encoding: utf8 -*-
 
 from django.shortcuts import render_to_response
+from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from soporte.models import Incidencia
+from soporte.forms import CrearIncidenciaForm
 
 @login_required
 def dashboard(request):
@@ -28,3 +30,18 @@ def incidencias(request):
         'user': request.user,
         'incidencias': incidencias
     })
+
+@login_required
+def nueva_incidencia(request):
+    form = CrearIncidenciaForm()
+    if request.method == 'POST':
+        form = CrearIncidenciaForm(request.POST)
+        if form.is_valid():
+            # This decrements the number of books in stock
+            # for the requested book
+            incidencia = form.save(request)
+            return HttpResponseRedirect(reverse('mis_incidencias'))
+    return render_to_response(
+        'soporte/crear_incidencia.html', 
+        {'form': form}
+    )
